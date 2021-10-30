@@ -19,7 +19,7 @@ Generate a secure password between 8 and 128 characters, randomly generated usin
 
 ## WEBSITE
 
-[This is an external link to published site] (https://acdodd17.github.io/portfolio/)
+[This is an external link to published site] (https://acdodd17.github.io/password-generator/)
 
 
 ## CONTRIBUTION
