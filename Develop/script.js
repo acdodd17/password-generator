@@ -15,6 +15,8 @@ var generatePassword = function () {
       return passLength;
     } else if (passLength < 8 || passLength > 128 || undefined) {
       passLength = window.prompt("Enter a number of at least 8 and no more than 128!");
+      console.log(passLength);
+      return passLength;
     } 
   };
 
@@ -22,7 +24,8 @@ var generatePassword = function () {
     length: getPassLength(),
     lower: window.confirm("Would you like to include lowercase characters?"),
     upper: window.confirm("Would you like to include uppercase characters?"),
-    special: window.confirm("Would you like to include special characters?"),
+    numeric: window.confirm("Would you like to include numbers?"),
+    special: window.confirm("Would you like to include special characters?")
   };
 
   if (passCriteria.lower === true) {
@@ -33,11 +36,15 @@ var generatePassword = function () {
     var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     charList = charList + uppercase;
   }
+  if (passCriteria.numeric === true) {
+    var numeric = "0123456789";
+    charList = charList + numeric;
+  }
   if (passCriteria.special === true) {
     var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
     charList = charList + special;
   }
-
+  
   for (var i = 0; i < passCriteria.length; i++) {
     newPassword += charList.charAt(Math.floor(Math.random() * charList.length));
   }
