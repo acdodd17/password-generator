@@ -18,6 +18,12 @@ var generatePassword = function () {
     }
   };
 
+  var passCriteria = {
+    length: getPassLength(),
+    lower: window.confirm("Would you like to include lowercase characters?"),
+    upper: window.confirm("Would you like to include uppercase characters?"),
+    special: window.confirm("Would you like to include special characters?"),
+  };
 
   return newPassword;
 }
